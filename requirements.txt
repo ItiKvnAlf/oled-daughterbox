@@ -1,5 +1,5 @@
 RPi.GPIO
 adafruit-blinka
-adafruit-circuitpython-ssd1306
 pillow
 psutil
+adafruit-circuitpython-ssd1306
