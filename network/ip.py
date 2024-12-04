@@ -19,8 +19,8 @@ def get_mask(connection: str):
         # Process the command output to extract the mask
         for line in result.stdout.splitlines():
             # Check if the line contains the IP address
-            if "ipv4.addresses" in line:
-                mask = int(line.split()[-1].split('/')[1])  # Extract the mask
+            if "IP4.ADDRESS" in line:
+                mask = int(line.split(":")[-1].split('/')[1])  # Extract the mask
                 return mask
     except subprocess.CalledProcessError as e:
         print(f"Error: {e}")

@@ -16,8 +16,8 @@ def get_ip_address(connection: str):
         # Process the command output to extract the IP address
         for line in result.stdout.splitlines():
             # Check if the line contains the IP address
-            if "ipv4.addresses" in line:
-                ip = line.split()[-1].split('/')[0]  # Extract only the IP
+            if "IP4.ADDRESS" in line:
+                ip = line.split(":")[-1].split('/')[0]  # Extract only the IP
                 return ip
     except subprocess.CalledProcessError as e:
         print(f"Error: {e}")
