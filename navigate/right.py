@@ -4,12 +4,15 @@ from utils.get_linked_mh import get_linked_mh
 
 def navigate_right():
     """Navigate right in the menu."""
+
+    # Get the current state and other necessary data
     current_state = config.data['current_state']
     selected_digit_index = config.data['selected_digit_index']
     selected_confirm_button = config.data['selected_confirm_button']
     current_index = config.data['current_index']
     networks = config.data['networks']
     
+    # Check the current state and update the system accordingly
     if current_state == "menu":
         config.data['current_state'] = "info_db"
     elif current_state == "config":

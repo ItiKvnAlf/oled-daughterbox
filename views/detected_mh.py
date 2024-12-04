@@ -57,6 +57,7 @@ def link_detected_mh_view(x_start=36, y_start=0, digit_spacing=6):
         draw.polygon(down_icon_buttons, fill=255)  # Down arrow
 
 def success_link_detected_mh_view():
+    """Display the success link detected MOTHER HUB screen."""
     text1 = "LINKED to"
     text2 = config.data['selected_hub']["ssid"]
     text3 = "Push to continue"
@@ -65,12 +66,14 @@ def success_link_detected_mh_view():
     draw.text((center_text(text3), 20), text3, font=font, fill=255)
 
 def failure_link_detected_mh_view():
+    """Display the failure link detected MOTHER HUB screen."""
     text1 = "Failed to LINK"
     text2 = "Push to retry"
     draw.text((center_text(text1), 0), text1, font=font, fill=255)
     draw.text((center_text(text2), 10), text2, font=font, fill=255)
 
 def incorrect_password_view():
+    """Display the incorrect password screen."""
     text1 = "Incorrect password"
     text2 = "Push to retry"
     draw.text((center_text(text1), 5), text1, font=font, fill=255)

@@ -11,6 +11,8 @@ from system.actions import change_mode, reboot_system, shutdown_system
 
 def push_button():
     """Handle button press."""
+
+    # Get the current state and other necessary data
     current_state = config.data['current_state']
     selected_button = config.data['selected_button']
     selected_confirm_button = config.data['selected_confirm_button']
@@ -20,8 +22,8 @@ def push_button():
     temp_ip = config.data['temp_ip']
     temp_netmask = config.data['temp_netmask']
     
+    # Check the current state and update the system accordingly
     if current_state == "menu":
-        # Initialize the selected index for the digit (start with the first digit selected)
         config.data['selected_digit_index'] = 0
         config.data['current_state'] = "config"
     elif current_state == "config":

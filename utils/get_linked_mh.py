@@ -10,6 +10,9 @@ def get_linked_mh():
 
     Returns:
         data (dict): A dictionary containing the SSID and RSSI of the linked network.
+
+    Raises:
+        Exception: If an error occurs while running the nmcli command.
     """
     # Display the loading MH info view if the current state is info_db
     if config.data['current_state'] == "info_db":

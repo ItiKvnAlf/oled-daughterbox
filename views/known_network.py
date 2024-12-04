@@ -73,12 +73,14 @@ def known_network_config_view():
         draw.text((width4, 10), text4, font=font, fill=0)
 
 def confirm_unlinking_mh_view():
+    """Display the confirm unlinking view."""
     text1 = "Confirm UNLINKING"
     text2 = "from this MOTHER HUB?"
     draw.text((center_text(text1), 0), text1, font=font, fill=255)
     draw.text((center_text(text2), 10), text2, font=font, fill=255)
 
 def confirm_known_link_view():
+    """Display the confirm known link view."""
     item = config.data['networks'][config.data['current_index']]
     ssid = item["ssid"]
     text1 = "Confirm LINKING to"
@@ -87,12 +89,14 @@ def confirm_known_link_view():
     draw.text((center_text(text2), 10), text2, font=font, fill=255)
 
 def success_known_link_view():
+    """Display the success known link view."""
     text1 = "LINKED"
     text2 = "Push to continue"
     draw.text((center_text(text1), 5), text1, font=font, fill=255)
     draw.text((center_text(text2), 15), text2, font=font, fill=255)
 
 def failure_known_link_view():
+    """Display the failure known link view."""
     text1 = "Failed to"
     text2 = "LINK"
     text3 = "Push to go back"
@@ -101,6 +105,7 @@ def failure_known_link_view():
     draw.text((center_text(text3), 20), text3, font=font, fill=255)
 
 def confirm_known_unlink_view():
+    """Display the confirm known unlink view."""
     item = config.data['networks'][config.data['current_index']]
     ssid = item["ssid"]
     text1 = "UNLINK from"
@@ -109,12 +114,14 @@ def confirm_known_unlink_view():
     draw.text((center_text(text2), 10), text2, font=font, fill=255)
 
 def success_known_unlink_view():
+    """Display the success known unlink view."""
     text1 = "UNLINKED"
     text2 = "Push to continue"
     draw.text((center_text(text1), 5), text1, font=font, fill=255)
     draw.text((center_text(text2), 15), text2, font=font, fill=255)
 
 def failure_known_unlink_view():
+    """Display the failure known unlink view."""
     text1= "Failed to"
     text2 = "UNLINK"
     text3 = "Push to go back"
@@ -123,6 +130,7 @@ def failure_known_unlink_view():
     draw.text((center_text(text3), 20), text3, font=font, fill=255)
 
 def confirm_known_autolink_view():
+    """Display the confirm known autolink view."""
     item = config.data['networks'][config.data['current_index']]
     ssid = item["ssid"]
     autolink = check_autoconnect(ssid)
@@ -132,6 +140,7 @@ def confirm_known_autolink_view():
     draw.text((center_text(text2), 10), text2, font=font, fill=255)
 
 def success_known_autolink_view():
+    """Display the success known autolink view."""
     text1 = "Changes to AUTOLINK"
     text2 = "applied"
     text3 = "Push to continue"
@@ -140,6 +149,7 @@ def success_known_autolink_view():
     draw.text((center_text(text3), 20), text3, font=font, fill=255)
 
 def failure_known_autolink_view():
+    """Display the failure known autolink view."""
     text1 = "Failed to apply"
     text2 = "AUTOLINK changes"
     text3 = "Push to continue"
@@ -148,6 +158,7 @@ def failure_known_autolink_view():
     draw.text((center_text(text3), 20), text3, font=font, fill=255)
 
 def confirm_known_delete_view():
+    """Display the confirm known delete view."""
     item = config.data['networks'][config.data['current_index']]
     ssid = item["ssid"]
     text1 = "Confirm DELETION of"
@@ -156,6 +167,7 @@ def confirm_known_delete_view():
     draw.text((center_text(text2), 10), text2, font=font, fill=255)
 
 def success_known_delete_view():
+    """Display the success known delete view."""
     item = config.data['networks'][config.data['current_index']]
     text1 = item["ssid"]
     text2 = "DELETED"
@@ -165,6 +177,7 @@ def success_known_delete_view():
     draw.text((center_text(text3), 20), text3, font=font, fill=255)
 
 def failure_known_delete_view():
+    """Display the failure known delete view."""
     item = config.data['networks'][config.data['current_index']]
     text1 = "Failed to DELETE"
     text2 = item["ssid"]

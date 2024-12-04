@@ -5,6 +5,7 @@ from utils.scroll_text import start_scrolling_text
 from display.config import draw, width, font
 
 def networks_info_view():
+    """Display the networks info view."""
     item = config.data['networks']
     text1 = f"NETWORKS DETECTED: {len(item)}"
     text2 = "Push to refresh"
@@ -12,6 +13,7 @@ def networks_info_view():
     draw.text((0, 20), text2, font=font, fill=255)
     
 def networks_detected_view():
+    """Display the networks detected view."""
     item = config.data['networks'][config.data['current_index']]
     ssid = item["ssid"]
     rssi = item["rssi"]
@@ -44,6 +46,7 @@ def networks_detected_view():
     )
 
 def no_networks_view():
+    """Display the no networks view."""
     text1 = "NO NETWORKS"
     text2 = "DETECTED"
     text3 = "Push to refresh"

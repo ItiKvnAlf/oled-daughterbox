@@ -181,9 +181,7 @@ def system_change_mask_view(x_start=0, y_start=0):
         draw.polygon(down_icon_buttons, fill=255)
 
 def confirm_system_change_ip_view():
-    """
-    Display the confirm system change IP view.
-    """
+    """Display the confirm system change IP view."""
     ip_text = f"({format_ip_address(config.data['temp_ip'])}/{config.data['temp_netmask']})"
     text1 = "Confirm changes?"
     text2 = ip_text
@@ -191,38 +189,31 @@ def confirm_system_change_ip_view():
     draw.text((center_text(text2), 10), text2, font=font, fill=255)
 
 def confirm_system_reboot_view():
-    """
-    Display the confirm system reboot view.
-    """
+    """Display the confirm system reboot view."""
     text1 = "REBOOT this device?"
     draw.text((center_text(text1), 5), text1, font=font, fill=255)
 
 def confirm_system_shutdown_view():
-    """
-    Display the confirm system shutdown view.
-    """
+    """Display the confirm system shutdown view."""
     text1 = "Confirm SHUTDOWN?"
     draw.text((center_text(text1), 5), text1, font=font, fill=255)
 
 def system_change_mode_view():
-    """
-    Display the confirm system change mode view.
-    """
+    """Display the confirm system change mode view."""
     text1 = "Change MODE to"
     text2 = "MOTHER BOX?"
     draw.text((center_text(text1), 0), text1, font=font, fill=255)
     draw.text((center_text(text2), 10), text2, font=font, fill=255)
 
 def confirm_system_change_mode_view():
-    """
-    Display the confirm system change mode view.
-    """
+    """Display the confirm system change mode view."""
     text1 = "The system will"
     text2 = "REBOOT. Proceed?"
     draw.text((center_text(text1), 0), text1, font=font, fill=255)
     draw.text((center_text(text2), 10), text2, font=font, fill=255)
 
 def same_ip_view():
+    """Display the same IP address view."""
     text1 = "Same IP address"
     text2 = "entered"
     text3 = "Push to go back"
@@ -231,6 +222,7 @@ def same_ip_view():
     draw.text((center_text(text3), 20), text3, font=font, fill=255)
 
 def ip_applied_view():
+    """Display the IP address applied view."""
     text1 = "IP address"
     text2 = "applied"
     text3 = "Push to continue"

@@ -3,6 +3,8 @@ from display.menu import display_current_menu
 
 def navigate_down():
     """Navigate down in the menu."""
+
+    # Get the current state and other necessary data
     current_state = config.data['current_state']
     selected_digit_index = config.data['selected_digit_index']
     selected_button = config.data['selected_button']
@@ -11,6 +13,7 @@ def navigate_down():
     temp_password = config.data['temp_password']
     networks = config.data['networks']
     
+    # Check the current state and update the system accordingly
     if current_state == "menu":
         if len(networks) > 0:
             config.data['current_state'] = "networks_info"

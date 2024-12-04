@@ -3,12 +3,15 @@ from display.menu import display_current_menu
 
 def navigate_left():
     """Navigate left in the menu."""
+
+    # Get the current state and other necessary data
     current_state = config.data['current_state']
     selected_digit_index = config.data['selected_digit_index']
     selected_confirm_button = config.data['selected_confirm_button']
     current_index = config.data['current_index']
     networks = config.data['networks']
     
+    # Check the current state and update the system accordingly
     if current_state == "info_db":
         config.data['current_state'] = "menu"
     elif current_state == "info_mh":

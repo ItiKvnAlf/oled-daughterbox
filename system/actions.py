@@ -3,10 +3,12 @@ import RPi.GPIO as GPIO # type: ignore
 import subprocess
 from system.constants import DEVICE_MODE_FILE_PATH, REBOOT_SYSTEM, SHUTDOWN_SYSTEM
 from utils.screen import blank_screen, display_screen
-import display.config as config
 from display.config import disp
 
 def reboot_system():
+    """
+    Function to blank the screen and reboot the system.
+    """
     blank_screen()
     display_screen()
     disp.poweroff()
@@ -18,6 +20,9 @@ def reboot_system():
         print(f"An error occurred while trying to reboot: {e}")
 
 def shutdown_system():
+    """
+    Function to blank the screen and shutdown the system.
+    """
     blank_screen()
     display_screen()
     disp.poweroff()

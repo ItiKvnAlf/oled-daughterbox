@@ -20,6 +20,7 @@ image = Image.new('1', (width, height))
 draw = ImageDraw.Draw(image)
 font = ImageFont.load_default()
 
+# Global data
 data = {
     'current_state': "menu",
     'current_index': 0,

@@ -3,7 +3,6 @@ from utils.screen import blank_screen, display_screen
 from utils.center_text import center_text
 from display.config import draw, font
 
-# LOADING VIEWS
 def initial_screen_view():
     """Display the initial screen."""
     # Draw initial screen logo
@@ -74,6 +73,7 @@ def linking_to_mh_view():
     display_screen()
 
 def linking_to_known_network_view(ssid: str):
+    """Display the linking to known network view."""
     text1 = "LINKING to"
     text2 = ssid + "..."
     blank_screen()
@@ -82,6 +82,7 @@ def linking_to_known_network_view(ssid: str):
     display_screen()
 
 def unlinking_from_known_network_view(ssid: str):
+    """Display the unlinking from known network view."""
     text1 = "UNLINKING from"
     text2 = ssid + "..."
     blank_screen()
