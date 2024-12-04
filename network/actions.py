@@ -1,7 +1,6 @@
 import subprocess
 import time
 import display.config as config
-from system.config import get_env_variable
 from system.constants import NMCLI_DELETE_KNOWN_WIFI_CONNECTION, NMCLI_LINK_TO_KNOWN_WIFI_CONNECTION, NMCLI_SET_AUTOCONNECT_TO_WIFI_CONNECTION, NMCLI_UNLINK_FROM_WIFI_CONNECTION, WIRELESS_INTERFACE
 from utils.get_ip import get_wireless_ip_address
 from utils.get_linked_mh import get_linked_mh
@@ -26,7 +25,7 @@ def link_known_network(ssid: str):
         command = NMCLI_LINK_TO_KNOWN_WIFI_CONNECTION.format(ssid)
         result = subprocess.run(command, capture_output=True, text=True, check=True, shell=True)
         
-        config.data['db']['wlan_ip'] = get_wireless_ip_address(get_env_variable(WIRELESS_INTERFACE))
+        config.data['db']['wlan_ip'] = get_wireless_ip_address(WIRELESS_INTERFACE)
         config.data['mh'] = get_linked_mh()
         
         if result.returncode == 0:
@@ -53,7 +52,7 @@ def unlink_known_network(ssid: str):
         command = NMCLI_UNLINK_FROM_WIFI_CONNECTION.format(ssid)
         result = subprocess.run(command, capture_output=True, text=True, check=True, shell=True)
         
-        config.data['db']['wlan_ip'] = get_wireless_ip_address(get_env_variable(WIRELESS_INTERFACE))
+        config.data['db']['wlan_ip'] = get_wireless_ip_address(WIRELESS_INTERFACE)
         config.data['mh'] = get_linked_mh()
         refresh_networks()
 
@@ -123,7 +122,7 @@ def unlink_from_hub():
         result = subprocess.run(command, capture_output=True, text=True, shell=True)
 
         config.data['mh'] = get_linked_mh()
-        config.data['db']["wlan_ip"] = get_wireless_ip_address(get_env_variable(WIRELESS_INTERFACE))
+        config.data['db']["wlan_ip"] = get_wireless_ip_address(WIRELESS_INTERFACE)
         refresh_networks()
         # Check if the disconnection was successful
         if result.returncode == 0:

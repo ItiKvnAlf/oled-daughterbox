@@ -55,14 +55,11 @@ def get_device_mode() -> str:
         ValueError: If the mode is not 'AP' or 'STA'.
         FileNotFoundError: If the mode file does not exist.
     """
-    mode_file_path = os.getenv(DEVICE_MODE_FILE_PATH)
-    if not mode_file_path:
-        raise EnvironmentError(f"{DEVICE_MODE_FILE_PATH} environment variable is not set")
 
-    if not os.path.exists(mode_file_path):
-        raise FileNotFoundError(f"Mode file not found at path: {mode_file_path}")
+    if not os.path.exists(DEVICE_MODE_FILE_PATH):
+        raise FileNotFoundError(f"Mode file not found at path: {DEVICE_MODE_FILE_PATH}")
 
-    with open(mode_file_path, 'r') as file:
+    with open(DEVICE_MODE_FILE_PATH, 'r') as file:
         mode = file.read().strip()
 
     if mode not in ['AP', 'STA']:
@@ -82,7 +79,6 @@ def set_device_mode(mode: str):
 
     Raises:
         ValueError: If the new mode is not 'AP' or 'STA'.
-        EnvironmentError: If the MODE_FILE_PATH environment variable is not set.
         FileNotFoundError: If the mode file does not exist.
     """
 
@@ -94,14 +90,10 @@ def set_device_mode(mode: str):
     elif mode == 'STA':
         new_mode = 'AP'
 
-    mode_file_path = os.getenv(DEVICE_MODE_FILE_PATH)
-    if not mode_file_path:
-        raise EnvironmentError(f"{DEVICE_MODE_FILE_PATH} environment variable is not set")
+    if not os.path.exists(DEVICE_MODE_FILE_PATH):
+        raise FileNotFoundError(f"Mode file not found at path: {DEVICE_MODE_FILE_PATH}")
 
-    if not os.path.exists(mode_file_path):
-        raise FileNotFoundError(f"Mode file not found at path: {mode_file_path}")
-
-    with open(mode_file_path, 'w') as file:
+    with open(DEVICE_MODE_FILE_PATH, 'w') as file:
         file.write(new_mode)
 
     

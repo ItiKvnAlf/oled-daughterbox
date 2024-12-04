@@ -1,6 +1,5 @@
 import time
 import RPi.GPIO as GPIO # type: ignore
-from system.config import get_env_variable, load_env
 from system.constants import ETHERNET_CONNECTION, WIRELESS_INTERFACE
 from utils.refresh import refresh_networks
 from display.menu import display_current_menu
@@ -16,9 +15,6 @@ from views.loading import initial_screen_view
 import display.config as config
 from display.config import disp
 
-# Load environment variables
-load_env()
-
 # GPIO Button Pins (Up, Down, Left, Right, Middle) using BCM numbering
 U_BTN, D_BTN, L_BTN, R_BTN, M_BTN = 5, 6, 13, 19, 26
 
@@ -31,13 +27,13 @@ time.sleep(2)
 
 # Update global data
 config.data['db'] = {
-    'ip': get_ip_address(get_env_variable(ETHERNET_CONNECTION)),
-    'wlan_ip': get_wireless_ip_address(get_env_variable(WIRELESS_INTERFACE)),
-    'mask': get_mask(get_env_variable(ETHERNET_CONNECTION)),
+    'ip': get_ip_address(ETHERNET_CONNECTION),
+    'wlan_ip': get_wireless_ip_address(WIRELESS_INTERFACE),
+    'mask': get_mask(ETHERNET_CONNECTION),
     'name': get_hostname(),
 }
-config.data['temp_ip'] = [int(digit) for digit in "".join(part.zfill(3) for part in get_ip_address(get_env_variable(ETHERNET_CONNECTION)).split('.'))]
-config.data['temp_mask'] = get_mask(get_env_variable(ETHERNET_CONNECTION))
+config.data['temp_ip'] = [int(digit) for digit in "".join(part.zfill(3) for part in get_ip_address(ETHERNET_CONNECTION).split('.'))]
+config.data['temp_mask'] = get_mask(ETHERNET_CONNECTION)
 
 # Main loop
 try:
