@@ -33,7 +33,7 @@ def confirm_view():
     # Check if "NO" button is selected
     if config.data['selected_confirm_button'] == 0:
         # Draw "NO" button as selected (white background, black text)
-        draw.rectangle((39, 20, 55, 30), fill=255)
+        draw.rectangle((39, 20, 57, 30), fill=255)
         draw.text((41, 20), "NO", font=font, fill=0)
     else:
         # Draw "NO" button as normal (black background, white text)
