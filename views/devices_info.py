@@ -14,7 +14,7 @@ def daughter_info_view():
 
     # Scrolling text for name
     max_width = (width - (draw.textlength("NAME: ")))
-    x_pos = (draw.textlength("NAME: "))
+    x_pos = (draw.textlength("NAME: ")) + 8
     start_scrolling_text(config.data['current_state'], config.data['current_index'], f"{item['name']}", max_width, x_pos, 0)
 
 def daughter_wlan_info_view():

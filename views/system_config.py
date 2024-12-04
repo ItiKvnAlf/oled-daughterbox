@@ -66,13 +66,13 @@ def system_info_ip_view():
     draw.text((center_text(text1), 0), text1, font=font, fill=255)
     draw.text((center_text(text2), 10), text2, font=font, fill=255)
     if config.data['selected_digit_index'] == 0:
-        draw.rectangle(((width - draw.textlength("CANCEL")) // 4 - 2, 22, draw.textlength("CANCEL") + 22, 31), fill=255)
-        draw.text(((width - draw.textlength("CANCEL")) // 4, 21), "CANCEL", font=font, fill=0)
-        draw.text((center_text("CHANGE") + ((width - draw.textlength("CHANGE")) // 4), 21), "CHANGE", font=font, fill=255)
+        draw.rectangle(((width - draw.textlength("CANCEL")) // 4 - 12, 22, draw.textlength("CANCEL") + 12, 31), fill=255)
+        draw.text(((width - draw.textlength("CANCEL")) // 4 -10, 21), "CANCEL", font=font, fill=0)
+        draw.text((center_text("CHANGE") + ((width - draw.textlength("CHANGE")) // 4 + 10), 21), "CHANGE", font=font, fill=255)
     else:
-        width1 = center_text("CHANGE") + (width - draw.textlength("CHANGE")) // 4
+        width1 = center_text("CHANGE") + (width - draw.textlength("CHANGE")) // 4 + 10
         draw.rectangle((width1 - 2, 22, width1 + draw.textlength("CHANGE") - 1, 31), fill=255)
-        draw.text(((width - draw.textlength("CANCEL")) // 4, 21), "CANCEL", font=font, fill=255)
+        draw.text(((width - draw.textlength("CANCEL")) // 4 -10, 21), "CANCEL", font=font, fill=255)
         draw.text((width1, 21), "CHANGE", font=font, fill=0)
 
 def system_change_ip_view(x_start=0, y_start=0, digit_spacing=6):
@@ -119,20 +119,20 @@ def system_change_ip_view(x_start=0, y_start=0, digit_spacing=6):
 
     # Draw and position the buttons with arrow indicators as before
     if config.data['selected_digit_index'] == 12 and config.data['selected_button'] == 0:
-        draw.rectangle((button_x - 2, button_y + 2, button_x + 24, button_y + 10), fill=255)
-        draw.text((button_x, button_y), "BACK", font=font, fill=0)
+        draw.rectangle((button_x - 6, button_y + 2, button_x + 20, button_y + 10), fill=255)
+        draw.text((button_x - 4, button_y), "BACK", font=font, fill=0)
     else:
-        draw.text((button_x, button_y), "BACK", font=font, fill=255)
+        draw.text((button_x - 4, button_y), "BACK", font=font, fill=255)
     
     if config.data['selected_digit_index'] == 12 and config.data['selected_button'] == 1:
-        draw.rectangle((button_x - 2, button_y + 12, button_x + 24, button_y + 19), fill=255)
-        draw.text((button_x, button_y + 10), "NEXT", font=font, fill=0)
+        draw.rectangle((button_x - 6, button_y + 12, button_x + 20, button_y + 19), fill=255)
+        draw.text((button_x - 4, button_y + 10), "NEXT", font=font, fill=0)
     else:
-        draw.text((button_x, button_y + 10), "NEXT", font=font, fill=255)
+        draw.text((button_x - 4, button_y + 10), "NEXT", font=font, fill=255)
 
     if config.data['selected_digit_index'] == 12:
-        up_icon_buttons = [(button_x + 11, button_y - 3), (button_x + 9, button_y - 1), (button_x + 13, button_y - 1)]
-        down_icon_buttons = [(button_x + 11, button_y + 24), (button_x + 9, button_y + 22), (button_x + 13, button_y + 22)]
+        up_icon_buttons = [(button_x + 7, button_y - 3), (button_x + 5, button_y - 1), (button_x + 9, button_y - 1)]
+        down_icon_buttons = [(button_x + 7, button_y + 24), (button_x + 5, button_y + 22), (button_x + 9, button_y + 22)]
         
         draw.polygon(up_icon_buttons, fill=255)  # Up arrow
         draw.polygon(down_icon_buttons, fill=255)  # Down arrow
@@ -152,30 +152,30 @@ def system_change_mask_view(x_start=0, y_start=0):
     
     if config.data['selected_digit_index'] == 0:
         draw.polygon(up_icon, fill=255)  # Up arrow
-        draw.text((x_start + 10, y_start + 10), "NETMASK: /" + str(config.data['temp_netmask']), font=font, fill=255)  # Draw selected digit
+        draw.text((x_start + 10, y_start + 10), "NETMASK:  /" + str(config.data['temp_netmask']), font=font, fill=255)  # Draw selected digit
         draw.polygon(down_icon, fill=255)  # Down arrow
     else:
-        draw.text((x_start + 10, y_start + 10), "NETMASK: /" + str(config.data['temp_netmask']), font=font, fill=255)
+        draw.text((x_start + 10, y_start + 10), "NETMASK:  /" + str(config.data['temp_netmask']), font=font, fill=255)
 
     # Draw "BACK" and "SAVE" buttons at the end of the IP address
     button_x, button_y = x_start + 100, y_start + 5
 
     # Draw and position the buttons with arrow indicators as before
     if config.data['selected_digit_index'] == 1 and config.data['selected_button'] == 0:
-        draw.rectangle((button_x - 2, button_y + 2, button_x + 24, button_y + 10), fill=255)
-        draw.text((button_x, button_y), "BACK", font=font, fill=0)
+        draw.rectangle((button_x - 6, button_y + 2, button_x + 20, button_y + 10), fill=255)
+        draw.text((button_x - 4, button_y), "BACK", font=font, fill=0)
     else:
-        draw.text((button_x, button_y), "BACK", font=font, fill=255)
+        draw.text((button_x - 4, button_y), "BACK", font=font, fill=255)
 
     if config.data['selected_digit_index'] == 1 and config.data['selected_button'] == 1:
-        draw.rectangle((button_x - 2, button_y + 12, button_x + 24, button_y + 19), fill=255)
-        draw.text((button_x, button_y + 10), "SAVE", font=font, fill=0)
+        draw.rectangle((button_x - 6, button_y + 12, button_x + 20, button_y + 19), fill=255)
+        draw.text((button_x - 4, button_y + 10), "SAVE", font=font, fill=0)
     else:
-        draw.text((button_x, button_y + 10), "SAVE", font=font, fill=255)
+        draw.text((button_x - 4, button_y + 10), "SAVE", font=font, fill=255)
 
     if config.data['selected_digit_index'] == 1:
-        up_icon_buttons = [(button_x + 11, button_y - 3), (button_x + 9, button_y - 1), (button_x + 13, button_y - 1)]
-        down_icon_buttons = [(button_x + 11, button_y + 24), (button_x + 9, button_y + 22), (button_x + 13, button_y + 22)]
+        up_icon_buttons = [(button_x + 7, button_y - 3), (button_x + 5, button_y - 1), (button_x + 9, button_y - 1)]
+        down_icon_buttons = [(button_x + 7, button_y + 24), (button_x + 5, button_y + 22), (button_x + 9, button_y + 22)]
         
         draw.polygon(up_icon_buttons, fill=255)
         draw.polygon(down_icon_buttons, fill=255)
@@ -200,8 +200,8 @@ def confirm_system_shutdown_view():
 
 def system_change_mode_view():
     """Display the confirm system change mode view."""
-    text1 = "Change MODE to"
-    text2 = "MOTHER BOX?"
+    text1 = "Change MODE  to"
+    text2 = "MOTHER  BOX?"
     draw.text((center_text(text1), 0), text1, font=font, fill=255)
     draw.text((center_text(text2), 10), text2, font=font, fill=255)
 
