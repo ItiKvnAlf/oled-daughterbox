@@ -64,6 +64,8 @@ def refresh_networks():
             
             if config.data['current_state'] == "no_networks" and len(config.data['networks']) > 0:
                 config.data['current_state'] = "networks_info"
+            elif config.data['current_state'] == "networks_info" and len(config.data['networks']) == 0:
+                config.data['current_state'] = "no_networks"
         else:
             print("The nmcli command failed.")
     

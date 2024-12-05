@@ -7,7 +7,7 @@ from display.config import draw, width, font
 def networks_info_view():
     """Display the networks info view."""
     item = config.data['networks']
-    text1 = f"NETWORKS DETECTED: {len(item)}"
+    text1 = f"MOTHERS DETECTED: {len(item)}"
     text2 = "Push to refresh"
     draw.text((0, 0), text1, font=font, fill=255)
     draw.text((0, 20), text2, font=font, fill=255)
