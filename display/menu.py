@@ -84,5 +84,5 @@ def display_current_menu():
     elif current_state == "failed_delete_known_network":
         failure_known_delete_view()
 
-    if current_state != "networks_detected" and current_state != "info_mh" and current_state != "info_db":
+    if current_state != "networks_detected" and current_state != "info_mh":
         display_screen()
