@@ -81,6 +81,7 @@ def draw_icons_bottom_right():
     elif current_state == "info_db":  # DAUGHTER BOX information
         set_icon_bottom_right('left')
         set_icon_bottom_right('right')
+        set_icon_bottom_right('down')
 
     elif current_state == "info_db_wlan_ip" or current_state == "db_webpage_info":  # DAUGHTER BOX Webpage access information
         set_icon_bottom_right('up')
