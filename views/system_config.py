@@ -152,10 +152,10 @@ def system_change_mask_view(x_start=0, y_start=0):
     
     if config.data['selected_digit_index'] == 0:
         draw.polygon(up_icon, fill=255)  # Up arrow
-        draw.text((x_start + 10, y_start + 10), "NETMASK:  /" + str(config.data['temp_netmask']), font=font, fill=255)  # Draw selected digit
+        draw.text((x_start + 10, y_start + 10), "NETMASK:   /" + str(config.data['temp_netmask']), font=font, fill=255)  # Draw selected digit
         draw.polygon(down_icon, fill=255)  # Down arrow
     else:
-        draw.text((x_start + 10, y_start + 10), "NETMASK:  /" + str(config.data['temp_netmask']), font=font, fill=255)
+        draw.text((x_start + 10, y_start + 10), "NETMASK:   /" + str(config.data['temp_netmask']), font=font, fill=255)
 
     # Draw "BACK" and "SAVE" buttons at the end of the IP address
     button_x, button_y = x_start + 100, y_start + 5
