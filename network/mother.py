@@ -44,8 +44,10 @@ def link_to_detected_mh():
                 delete_known_network(mh["ssid"])
                 config.data['current_state'] = "incorrect_password"
             elif "error: connection activation failed: ip configuration could not be reserved (no available address, timeout, etc.)." in error_message:
+                delete_known_network(mh["ssid"])
                 config.data['current_state'] = "no_router"
             else:
+                delete_known_network(mh["ssid"])
                 config.data['current_state'] = "failed_linking"
     
     except Exception as e:
