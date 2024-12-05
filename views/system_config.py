@@ -119,20 +119,20 @@ def system_change_ip_view(x_start=0, y_start=0, digit_spacing=6):
 
     # Draw and position the buttons with arrow indicators as before
     if config.data['selected_digit_index'] == 12 and config.data['selected_button'] == 0:
-        draw.rectangle((button_x - 6, button_y + 2, button_x + 20, button_y + 10), fill=255)
+        draw.rectangle((button_x - 2, button_y + 2, button_x + 24, button_y + 10), fill=255)
         draw.text((button_x - 4, button_y), "BACK", font=font, fill=0)
     else:
         draw.text((button_x - 4, button_y), "BACK", font=font, fill=255)
     
     if config.data['selected_digit_index'] == 12 and config.data['selected_button'] == 1:
-        draw.rectangle((button_x - 6, button_y + 12, button_x + 20, button_y + 19), fill=255)
+        draw.rectangle((button_x - 2, button_y + 12, button_x + 24, button_y + 19), fill=255)
         draw.text((button_x - 4, button_y + 10), "NEXT", font=font, fill=0)
     else:
         draw.text((button_x - 4, button_y + 10), "NEXT", font=font, fill=255)
 
     if config.data['selected_digit_index'] == 12:
-        up_icon_buttons = [(button_x + 7, button_y - 3), (button_x + 5, button_y - 1), (button_x + 9, button_y - 1)]
-        down_icon_buttons = [(button_x + 7, button_y + 24), (button_x + 5, button_y + 22), (button_x + 9, button_y + 22)]
+        up_icon_buttons = [(button_x + 9, button_y - 3), (button_x + 7, button_y - 1), (button_x + 11, button_y - 1)]
+        down_icon_buttons = [(button_x + 9, button_y + 24), (button_x + 7, button_y + 22), (button_x + 11, button_y + 22)]
         
         draw.polygon(up_icon_buttons, fill=255)  # Up arrow
         draw.polygon(down_icon_buttons, fill=255)  # Down arrow
@@ -162,20 +162,20 @@ def system_change_mask_view(x_start=0, y_start=0):
 
     # Draw and position the buttons with arrow indicators as before
     if config.data['selected_digit_index'] == 1 and config.data['selected_button'] == 0:
-        draw.rectangle((button_x - 6, button_y + 2, button_x + 20, button_y + 10), fill=255)
+        draw.rectangle((button_x - 6, button_y + 2, button_x + 24, button_y + 10), fill=255)
         draw.text((button_x - 4, button_y), "BACK", font=font, fill=0)
     else:
         draw.text((button_x - 4, button_y), "BACK", font=font, fill=255)
 
     if config.data['selected_digit_index'] == 1 and config.data['selected_button'] == 1:
-        draw.rectangle((button_x - 6, button_y + 12, button_x + 20, button_y + 19), fill=255)
+        draw.rectangle((button_x - 6, button_y + 12, button_x + 24, button_y + 19), fill=255)
         draw.text((button_x - 4, button_y + 10), "SAVE", font=font, fill=0)
     else:
         draw.text((button_x - 4, button_y + 10), "SAVE", font=font, fill=255)
 
     if config.data['selected_digit_index'] == 1:
-        up_icon_buttons = [(button_x + 7, button_y - 3), (button_x + 5, button_y - 1), (button_x + 9, button_y - 1)]
-        down_icon_buttons = [(button_x + 7, button_y + 24), (button_x + 5, button_y + 22), (button_x + 9, button_y + 22)]
+        up_icon_buttons = [(button_x + 9, button_y - 3), (button_x + 7, button_y - 1), (button_x + 11, button_y - 1)]
+        down_icon_buttons = [(button_x + 9, button_y + 24), (button_x + 7, button_y + 22), (button_x + 11, button_y + 22)]
         
         draw.polygon(up_icon_buttons, fill=255)
         draw.polygon(down_icon_buttons, fill=255)
