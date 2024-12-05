@@ -71,8 +71,8 @@ def system_info_ip_view():
         draw.text((center_text("CHANGE") + ((width - draw.textlength("CHANGE")) // 4 + 10), 21), "CHANGE", font=font, fill=255)
     else:
         width1 = center_text("CHANGE") + (width - draw.textlength("CHANGE")) // 4 + 10
-        draw.rectangle((width1 - 2, 22, width1 + draw.textlength("CHANGE") - 1, 31), fill=255)
-        draw.text(((width - draw.textlength("CANCEL")) // 4 -10, 21), "CANCEL", font=font, fill=255)
+        draw.rectangle((width1 - 2, 22, width1 + draw.textlength("CHANGE") + 1, 31), fill=255)
+        draw.text(((width - draw.textlength("CANCEL")) // 4 - 10, 21), "CANCEL", font=font, fill=255)
         draw.text((width1, 21), "CHANGE", font=font, fill=0)
 
 def system_change_ip_view(x_start=0, y_start=0, digit_spacing=6):

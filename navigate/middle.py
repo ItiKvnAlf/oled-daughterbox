@@ -43,7 +43,11 @@ def push_button():
     elif current_state == "system_change_ip":
         if selected_digit_index == 1:
             config.data['current_state'] = "change_ip"
-            config.data['temp_ip'] = [int(digit) for digit in "".join(part.zfill(3) for part in get_ip_address(ETHERNET_CONNECTION).split('.'))]
+            ip = get_ip_address(ETHERNET_CONNECTION)
+            if ip:
+                config.data['temp_ip'] = [int(digit) for digit in "".join(part.zfill(3) for part in ip.split('.'))]
+            else:
+                config.data['temp_ip'] = [1, 9, 2, 1, 6, 8, 0, 0, 1, 0, 0, 1]
             config.data['selected_digit_index'] = 0
         elif selected_digit_index == 0:
             config.data['current_state'] = "config"
@@ -88,7 +92,11 @@ def push_button():
         if selected_digit_index == 12 and selected_button == 0:
             config.data['current_state'] = "system_change_ip"
             config.data['selected_digit_index'] = 0
-            config.data['temp_ip'] = [int(digit) for digit in "".join(part.zfill(3) for part in get_ip_address(ETHERNET_CONNECTION).split('.'))]
+            ip = get_ip_address(ETHERNET_CONNECTION)
+            if ip:
+                config.data['temp_ip'] = [int(digit) for digit in "".join(part.zfill(3) for part in ip.split('.'))]
+            else:
+                config.data['temp_ip'] = [1, 9, 2, 1, 6, 8, 0, 0, 1, 0, 0, 1]
         elif selected_digit_index == 12 and selected_button == 1:
             config.data['current_state'] = "netmask"
             config.data['temp_netmask'] = calculate_netmask_prefix()
@@ -101,8 +109,11 @@ def push_button():
             config.data['current_state'] = "change_ip"
             config.data['selected_digit_index'] = 0
         elif selected_digit_index == 1 and selected_button == 1:
-            if temp_ip == [int(digit) for digit in "".join(part.zfill(3) for part in current_ip.split('.'))] and temp_netmask == current_mask:
-                config.data['current_state'] = "same_ip"
+            if current_ip:
+                if temp_ip == [int(digit) for digit in "".join(part.zfill(3) for part in current_ip.split('.'))] and temp_netmask == current_mask:
+                    config.data['current_state'] = "same_ip"
+                else:
+                    config.data['current_state'] = "confirm_ip"
             else:
                 config.data['current_state'] = "confirm_ip"
             config.data['selected_digit_index'] = 0
@@ -114,7 +125,11 @@ def push_button():
     elif current_state == "confirm_ip":
         if selected_confirm_button == 0:
             config.data['selected_button'] = 0
-            config.data['temp_ip'] = [int(digit) for digit in "".join(part.zfill(3) for part in get_ip_address(ETHERNET_CONNECTION).split('.'))]
+            ip = get_ip_address(ETHERNET_CONNECTION)
+            if ip:
+                config.data['temp_ip'] = [int(digit) for digit in "".join(part.zfill(3) for part in ip.split('.'))]
+            else:
+                config.data['temp_ip'] = [1, 9, 2, 1, 6, 8, 0, 0, 1, 0, 0, 1]
             config.data['current_state'] = "change_ip"
         elif selected_confirm_button == 1:
             # Format the IP address and subnet mask

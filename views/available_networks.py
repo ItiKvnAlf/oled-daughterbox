@@ -23,8 +23,8 @@ def networks_detected_view():
     if known:  # If the network is known
         status_text = "KNOWN (Linked)" if linked else "KNOWN (Unlinked)"
         # Draw white background for status text
-        draw.rectangle((0, 11, draw.textlength(status_text), 19), fill=255)  # White background
-        draw.text((2, 10), status_text, font=font, fill=0)  # Black text
+        draw.rectangle((0, 11, draw.textlength(status_text) + 1, 19), fill=255)  # White background
+        draw.text((1, 10), status_text, font=font, fill=0)  # Black text
         draw.text((0, 20), f"Push to config", font=font, fill=255)
     else:
         # Display RSSI if the network is not known
