@@ -45,9 +45,9 @@ def link_detected_mh_view(x_start=36, y_start=0, digit_spacing=6):
     
     if config.data['selected_digit_index'] == 8 and config.data['selected_button'] == 1:
         draw.rectangle((button_x - 4, button_y + 12, button_x + 24, button_y + 19), fill=255)
-        draw.text((button_x - 4, button_y + 10), "NEXT", font=font, fill=0)
+        draw.text((button_x - 3, button_y + 10), "NEXT", font=font, fill=0)
     else:
-        draw.text((button_x - 4, button_y + 10), "NEXT", font=font, fill=255)
+        draw.text((button_x - 3, button_y + 10), "NEXT", font=font, fill=255)
 
     if config.data['selected_digit_index'] == 8:
         up_icon_buttons = [(button_x + 9, button_y - 3), (button_x + 7, button_y - 1), (button_x + 11, button_y - 1)]
