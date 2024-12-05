@@ -109,7 +109,7 @@ def draw_icons_bottom_right():
             set_icon_bottom_right('left')
             set_icon_bottom_right('right')
 
-    elif current_state == "link_success" or current_state == "incorrect_password" or current_state == "no_router" or current_state == "failed_linking" or current_state == "same_ip" or current_state == "ip_applied":
+    elif current_state == "link_success" or current_state == "incorrect_password" or current_state == "no_router" or current_state == "no_ssid_found" or current_state == "failed_linking" or current_state == "same_ip" or current_state == "ip_applied":
         set_icon_bottom_right('middle') 
 
 def draw_rssi_bars(rssi: int):

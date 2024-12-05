@@ -39,13 +39,19 @@ def link_to_detected_mh():
         else:
             # Analyze the error message
             error_message = result.stderr.lower()
+            incorrect_password_error = "error: connection activation failed: secrets were required, but not provided."
+            no_router_error = "error: connection activation failed: ip configuration could not be reserved (no available address, timeout, etc.)."
+            no_ssid_error = f"error: no network with ssid '{mh["ssid"]}' found."
             print("Error message:", error_message, flush=True)
-            if "error: connection activation failed: secrets were required, but not provided." in error_message:
+            if incorrect_password_error in error_message:
                 delete_known_network(mh["ssid"])
                 config.data['current_state'] = "incorrect_password"
-            elif "error: connection activation failed: ip configuration could not be reserved (no available address, timeout, etc.)." in error_message:
+            elif no_router_error in error_message:
                 delete_known_network(mh["ssid"])
                 config.data['current_state'] = "no_router"
+            elif no_ssid_error.lower() in error_message:
+                delete_known_network(mh['ssid'])
+                config.data['current_state'] = "no_ssid_found"
             else:
                 delete_known_network(mh["ssid"])
                 config.data['current_state'] = "failed_linking"

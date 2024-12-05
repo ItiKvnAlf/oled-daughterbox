@@ -88,3 +88,11 @@ def no_router_view():
     draw.text((center_text(text2), 10), text2, font=font, fill=255)
     draw.text((center_text(text3), 20), text3, font=font, fill=255)
 
+def no_ssid_found_view():
+    """Display the no SSID found view"""
+    text1 = "Network no found."
+    text2 = "Please refresh"
+    text3 = "Push to go back"
+    draw.text((center_text(text1), 0), text1, font=font, fill=255)
+    draw.text((center_text(text2), 10), text2, font=font, fill=255)
+    draw.text((center_text(text3), 20), text3, font=font, fill=255)

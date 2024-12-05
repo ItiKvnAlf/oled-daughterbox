@@ -265,4 +265,10 @@ def push_button():
     elif current_state == "incorrect_password" or current_state == "no_router" or current_state == "failed_linking":
         config.data['temp_password'] = [0] * 8
         config.data['current_state'] = "link_mh"
+    elif current_state == "no_ssid_found":
+        config.data['temp_password'] = [0] * 8
+        if len(networks) > 0:
+            config.data['current_state'] = "networks_info"
+        else:
+            config.data['current_state'] = "no_networks"
     display_current_menu()
