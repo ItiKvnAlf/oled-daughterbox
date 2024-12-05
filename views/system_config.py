@@ -119,7 +119,7 @@ def system_change_ip_view(x_start=0, y_start=0, digit_spacing=6):
 
     # Draw and position the buttons with arrow indicators as before
     if config.data['selected_digit_index'] == 12 and config.data['selected_button'] == 0:
-        draw.rectangle((button_x - 5, button_y + 2, button_x + 23, button_y + 10), fill=255)
+        draw.rectangle((button_x - 5, button_y + 2, button_x + 23, button_y + 9), fill=255)
         draw.text((button_x - 4, button_y), "BACK", font=font, fill=0)
     else:
         draw.text((button_x - 4, button_y), "BACK", font=font, fill=255)
@@ -162,7 +162,7 @@ def system_change_mask_view(x_start=0, y_start=0):
 
     # Draw and position the buttons with arrow indicators as before
     if config.data['selected_digit_index'] == 1 and config.data['selected_button'] == 0:
-        draw.rectangle((button_x - 5, button_y + 2, button_x + 23, button_y + 10), fill=255)
+        draw.rectangle((button_x - 5, button_y + 2, button_x + 23, button_y + 9), fill=255)
         draw.text((button_x - 4, button_y), "BACK", font=font, fill=0)
     else:
         draw.text((button_x - 4, button_y), "BACK", font=font, fill=255)
