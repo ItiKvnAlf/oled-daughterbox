@@ -271,4 +271,5 @@ def push_button():
             config.data['current_state'] = "networks_info"
         else:
             config.data['current_state'] = "no_networks"
+        refresh_networks()
     display_current_menu()
