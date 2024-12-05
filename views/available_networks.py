@@ -47,7 +47,7 @@ def networks_detected_view():
 
 def no_networks_view():
     """Display the no networks view."""
-    text1 = "NO NETWORKS"
+    text1 = "NO MOTHERS"
     text2 = "DETECTED"
     text3 = "Push to refresh"
     draw.text((center_text(text1), 0), text1, font=font, fill=255)

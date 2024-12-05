@@ -17,6 +17,8 @@ def navigate_up():
                 config.data['selected_button'] -= 1
             else:
                 config.data['selected_button'] = len(config.data['system_config_options']) - 1
+    elif current_state == "db_webpage_info":
+        config.data['current_state'] = "info_db"
     elif current_state == "info_db_wlan_ip":
         config.data['current_state'] = "info_mh"
     elif current_state == "no_networks":

@@ -19,6 +19,8 @@ def navigate_down():
             config.data['current_state'] = "networks_info"
         else:
             config.data['current_state'] = "no_networks"
+    elif current_state == "info_db":
+        config.data['current_state'] = "db_webpage_info"
     elif current_state == "info_mh":
         config.data['current_state'] = "info_db_wlan_ip"
     elif current_state == "config":

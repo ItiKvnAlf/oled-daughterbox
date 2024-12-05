@@ -82,7 +82,7 @@ def draw_icons_bottom_right():
         set_icon_bottom_right('left')
         set_icon_bottom_right('right')
 
-    elif current_state == "info_db_wlan_ip":  # DAUGHTER BOX WLAN IP information
+    elif current_state == "info_db_wlan_ip" or current_state == "db_webpage_info":  # DAUGHTER BOX Webpage access information
         set_icon_bottom_right('up')
 
     elif current_state == "info_mh":  # Linked MOTHER HUB information
