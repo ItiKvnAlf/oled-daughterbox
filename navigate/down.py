@@ -1,5 +1,6 @@
 import display.config as config
 from display.menu import display_current_menu
+from utils.screen import display_screen
 
 def navigate_down():
     """Navigate down in the menu."""
@@ -21,6 +22,7 @@ def navigate_down():
             config.data['current_state'] = "no_networks"
     elif current_state == "info_db":
         config.data['current_state'] = "db_webpage_info"
+        display_screen()
     elif current_state == "info_mh":
         config.data['current_state'] = "info_db_wlan_ip"
     elif current_state == "config":
