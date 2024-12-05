@@ -71,44 +71,45 @@ def draw_icons_bottom_right():
     """
     Draw the icons on the bottom right of the OLED display based on the current state.
     """
+    current_state = config.data['current_state']
     # Draw up, down, left, right triangles and the circle based on current state
-    if config.data['current_state'] == "menu":  # Main Page
+    if current_state == "menu":  # Main Page
         set_icon_bottom_right('down')
         set_icon_bottom_right('right')
         set_icon_bottom_right('middle')
 
-    elif config.data['current_state'] == "info_db":  # DAUGHTER BOX information
+    elif current_state == "info_db":  # DAUGHTER BOX information
         set_icon_bottom_right('left')
         set_icon_bottom_right('right')
 
-    elif config.data['current_state'] == "info_db_wlan_ip":  # DAUGHTER BOX WLAN IP information
+    elif current_state == "info_db_wlan_ip":  # DAUGHTER BOX WLAN IP information
         set_icon_bottom_right('up')
 
-    elif config.data['current_state'] == "info_mh":  # Linked MOTHER HUB information
+    elif current_state == "info_mh":  # Linked MOTHER HUB information
         set_icon_bottom_right('left')
         set_icon_bottom_right('middle')
         set_icon_bottom_right('down')
     
-    elif config.data['current_state'] == "unlinked":  # Unlinked from MOTHER HUB
+    elif current_state == "unlinked":  # Unlinked from MOTHER HUB
         set_icon_bottom_right('middle')
 
-    elif config.data['current_state'] == "no_networks":  # No Networks Detected
+    elif current_state == "no_networks":  # No Networks Detected
         set_icon_bottom_right('up')
         set_icon_bottom_right('middle')
 
-    elif config.data['current_state'] == "networks_info":  # Networks
+    elif current_state == "networks_info":  # Networks
         set_icon_bottom_right('up')
         set_icon_bottom_right('down')
         set_icon_bottom_right('middle')
 
-    elif config.data['current_state'] == "networks_detected":  # Cameras
+    elif current_state == "networks_detected":  # Cameras
         set_icon_bottom_right('up')
         set_icon_bottom_right('middle')
         if len(config.data['networks']) > 1:
             set_icon_bottom_right('left')
             set_icon_bottom_right('right')
 
-    elif config.data['current_state'] == "link_success" or config.data['current_state'] == "incorrect_password" or config.data['current_state'] == "failed_linking" or config.data['current_state'] == "same_ip" or config.data['current_state'] == "ip_applied":
+    elif current_state == "link_success" or current_state == "incorrect_password" or current_state == "no_router" or current_state == "failed_linking" or current_state == "same_ip" or current_state == "ip_applied":
         set_icon_bottom_right('middle') 
 
 def draw_rssi_bars(rssi: int):

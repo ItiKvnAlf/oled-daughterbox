@@ -24,7 +24,10 @@ def navigate_up():
     elif current_state == "networks_info":
         config.data['current_state'] = "menu"
     elif current_state == "networks_detected":
-        config.data['current_state'] = "networks_info"
+        if len(config.data['networks']) > 0:
+            config.data['current_state'] = "networks_info"
+        else:
+            config.data['current_state'] = "no_networks"
     elif current_state == "config_network":
         if selected_digit_index == 0 and selected_button > 0:
             config.data['selected_button'] -= 1

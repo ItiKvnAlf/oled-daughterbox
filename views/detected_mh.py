@@ -13,7 +13,7 @@ def link_detected_mh_view(x_start=36, y_start=0, digit_spacing=6):
     """
     x_position, y_position = x_start, y_start
 
-    draw.text((6, 10), f"PASS:", font=font, fill=255)
+    draw.text((2, 10), f"PASS:", font=font, fill=255)
 
     for i in range(8):  # Loop through the eight digits of the password
         # Get the current digit{
@@ -78,4 +78,13 @@ def incorrect_password_view():
     text2 = "Push to retry"
     draw.text((center_text(text1), 5), text1, font=font, fill=255)
     draw.text((center_text(text2), 15), text2, font=font, fill=255)
+
+def no_router_view():
+    """Display the no router screen."""
+    text1 = "No router connected"
+    text2 = "to the MOTHER HUB"
+    text3 = "Push to retry"
+    draw.text((center_text(text1), 0), text1, font=font, fill=255)
+    draw.text((center_text(text2), 10), text2, font=font, fill=255)
+    draw.text((center_text(text3), 20), text3, font=font, fill=255)
 

@@ -4,7 +4,7 @@ from display.icons import draw_icons_bottom_right
 from utils.screen import blank_screen, display_screen
 from views.available_networks import networks_detected_view, networks_info_view, no_networks_view
 from views.confirm import confirm_view
-from views.detected_mh import failure_link_detected_mh_view, incorrect_password_view, link_detected_mh_view, success_link_detected_mh_view
+from views.detected_mh import failure_link_detected_mh_view, incorrect_password_view, link_detected_mh_view, no_router_view, success_link_detected_mh_view
 from views.devices_info import daughter_info_view, daughter_wlan_info_view, mother_info_view
 from views.known_network import failure_known_autolink_view, failure_known_delete_view, failure_known_link_view, failure_known_unlink_view, known_network_config_view, success_known_autolink_view, success_known_delete_view, success_known_link_view, success_known_unlink_view
 from views.main_menu import menu_view
@@ -55,6 +55,8 @@ def display_current_menu():
         failure_link_detected_mh_view()
     elif current_state == "incorrect_password":
         incorrect_password_view()
+    elif current_state == "no_router":
+        no_router_view()
     elif current_state == "no_networks":
         no_networks_view()
     elif current_state == "config_network":

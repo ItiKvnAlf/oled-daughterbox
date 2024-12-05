@@ -28,8 +28,11 @@ def navigate_down():
             else:
                 config.data['selected_button'] = 0
     elif current_state == "networks_info":
-        config.data['current_index'] = 0
-        config.data['current_state'] = "networks_detected"
+        if len(networks) > 0:
+            config.data['current_state'] = "networks_detected"
+            config.data['current_index'] = 0
+        else:
+            config.data['current_state'] = "no_networks"
     elif current_state == "config_network":
         if selected_digit_index == 0 and selected_button < 2:
             config.data['selected_button'] += 1

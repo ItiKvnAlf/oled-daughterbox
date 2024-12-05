@@ -262,7 +262,7 @@ def push_button():
         config.data['selected_confirm_button'] = 0
         config.data['selected_digit_index'] = 0
         config.data['current_state'] = "config_network"
-    elif current_state == "incorrect_password" or current_state == "failed_linking":
+    elif current_state == "incorrect_password" or current_state == "no_router" or current_state == "failed_linking":
         config.data['temp_password'] = [0] * 8
         config.data['current_state'] = "link_mh"
     display_current_menu()
