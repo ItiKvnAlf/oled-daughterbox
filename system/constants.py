@@ -8,6 +8,7 @@ DEVICE_MODE_FILE_PATH = '/home/capstone/mode'
 REBOOT_SYSTEM = "sudo reboot"
 SHUTDOWN_SYSTEM = "sudo shutdown now"
 
+NMCLI_CONNECTION_UP = "nmcli connection up {}"
 NMCLI_GET_IP4_ADDRESS = "nmcli -f ipv4.addresses connection show {}"
 NMCLI_SET_IP4_ADDRESS = "nmcli connection modify {} ipv4.addresses {}/{} ipv4.method manual"
 NMCLI_GET_IP4_ADDRESS_WIRELESS = "nmcli device show {}"

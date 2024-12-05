@@ -1,7 +1,7 @@
 import time
 import subprocess
 import display.config as config
-from system.constants import NMCLI_GET_IP4_ADDRESS, NMCLI_SET_IP4_ADDRESS
+from system.constants import NMCLI_CONNECTION_UP, NMCLI_GET_IP4_ADDRESS, NMCLI_SET_IP4_ADDRESS
 from utils.refresh import refresh_networks
 from views.loading import applying_ip_view
 
@@ -135,6 +135,8 @@ def apply_ip(connection: str, ip: str, mask: str):
 
         # Check if the command was successful
         if result.returncode == 0:
+            command = NMCLI_CONNECTION_UP.format(connection)
+            subprocess.run(command, shell=True, check=True)
             refresh_networks()
             config.data['db']["ip"] = ip
             config.data['db']["mask"] = mask
