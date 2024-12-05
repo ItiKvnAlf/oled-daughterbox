@@ -41,7 +41,7 @@ def link_to_detected_mh():
             error_message = result.stderr.lower()
             incorrect_password_error = "error: connection activation failed: secrets were required, but not provided."
             no_router_error = "error: connection activation failed: ip configuration could not be reserved (no available address, timeout, etc.)."
-            no_ssid_error = f"error: no network with ssid '{mh["ssid"]}' found."
+            no_ssid_error = f"error: no network with ssid '{mh_ssid}' found."
             print("Error message:", error_message, flush=True)
             if incorrect_password_error in error_message:
                 delete_known_network(mh["ssid"])
