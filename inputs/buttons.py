@@ -47,7 +47,7 @@ def handle_buttons(up_pin: int, down_pin: int, left_pin: int, right_pin: int, mi
         if current_state != "info_mh" and current_state != "info_db":
             navigate_up()
     elif GPIO.input(down_pin) == GPIO.LOW:
-        if current_state != "networks_detected" and current_state != "info_db" and current_state != "info_db_wlan_ip":
+        if current_state != "networks_detected" and current_state != "info_db_wlan_ip":
             navigate_down()
     elif GPIO.input(left_pin) == GPIO.LOW:
         if current_state != "info_db_wlan_ip":
