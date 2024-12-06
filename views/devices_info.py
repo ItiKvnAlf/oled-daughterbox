@@ -37,7 +37,7 @@ def daughter_wlan_info_view():
     if item['wlan_ip'] is not None:
         text1 = "Webpage access in MH"
         draw.text((center_text(text1), 0), text1, font=font, fill=255)
-        draw.text((10, 20), f"{item['wlan_ip']}", font=font, fill=255)
+        draw.text((10, 20), f"{item['wlan_ip']}:81", font=font, fill=255)
     else:
         text1 = "Connect to get IP"
         draw.text((center_text(text1), 0), text1, font=font, fill=255)
