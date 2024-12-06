@@ -22,11 +22,11 @@ def daughter_webpage_info_view():
     item = config.data['db']
 
     text1 = f"{item['ip']}:81"
-    text2 = "Use the URL to"
+    text2 = "Use this URL to"
     text3 = "access via ETHERNET"
-    draw.text((center_text(text1), 0), text1, font=font, fill=255)
-    draw.text((center_text(text2), 10), text2, font=font, fill=255)
-    draw.text((center_text(text3), 20), text3, font=font, fill=255)
+    draw.text((center_text(text1) - 4, 0), text1, font=font, fill=255)
+    draw.text((center_text(text2) - 4, 10), text2, font=font, fill=255)
+    draw.text((center_text(text3) - 4, 20), text3, font=font, fill=255)
 
 def daughter_wlan_info_view():
     """Display the DAUGHTER WLAN info view."""
